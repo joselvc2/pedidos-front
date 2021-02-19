@@ -1,0 +1,43 @@
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+          <h3>Agregar Producto</h3>
+        </div>
+        <div class="card-body">
+          <form action="">
+            <div class="form-group">
+              <label for="">Nombre Producto:</label>
+              <input [(ngModel)]="producto.nombreProducto" name="nombreProducto" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="">Precio Unitario:</label>
+              <input [(ngModel)]="producto.precioUnitario" name="precioUnitario" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="">Unidad Stock:</label>
+              <input [(ngModel)]="producto.unidadesEnStock" name="unidadesEnStock" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Categoría</label>
+              <select [(ngModel)]="producto.categoria.id" name = "categoria" class="form-control">
+                <option>Seleccione</option>
+                <option *ngFor="let categoria of categorias; let i = index" [value]="categorias[i].id "[selected]="categorias[i].id === producto.categoria.id" >
+                  {{categorias[i].nombreCategoria}}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label> Proveedor</label>
+              <select [(ngModel)]="producto.proveedor.id" name = "proveedor" class="form-control">
+                <option>Seleccione</option>
+                <option *ngFor="let proveedor of proveedores; let i = index" [value]="proveedores[i].id "[selected]="proveedores[i].id === producto.proveedor.id" >
+                  {{proveedores[i].nombreEmpresa}}
+                </option>
+              </select>
+            </div>
+              
+            <button (click)="Guardar()" class="btn btn-danger">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </div>

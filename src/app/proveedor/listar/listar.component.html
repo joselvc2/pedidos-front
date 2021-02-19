@@ -1,0 +1,61 @@
+<div class="container">
+
+  <div style="display: flex; justify-content: center;margin: 10px;">
+    <button (click)="Listar()" class="btn btn-primary"  style="margin: 0 10px;">Listar</button>
+    <button (click)="Nuevo()" class="btn btn-primary" >Nuevo</button>
+    </div>
+
+    <div class="card-header">
+<h3 style="text-align: center;">Lista de Proveedores</h3>
+    </div>
+
+    <div class="card-body">
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE CONTACTO</th>
+            <th>DIRECCION</th>
+            <th>NOMBRE EMPRESA</th>
+            <th>TELEFONO</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let proveedor of proveedores">
+            <td>{{proveedor.id}}</td>
+            <td>{{proveedor.nombreContacto}}</td>
+            <td>{{proveedor.direccion}}</td>
+            <td>{{proveedor.nombreEmpresa}}</td>
+            <td>{{proveedor.telefono}}</td>
+            <td>
+                <button (click)="Editar(proveedor)"  style="margin: 0     10px;" class="btn btn-warning">editar</button>
+                <button (click)="Delete(proveedor)" class="btn btn-danger">eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+  <!-- Modal 
+  <div class="modal fade" id="modalCrear" tabindex="-1" aria-labelledby="modalCrearModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalCrearModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    </div>   
+    
+    <i class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCrear" class="fas fa-plus btn-flotante"></i>-->
+</div>
